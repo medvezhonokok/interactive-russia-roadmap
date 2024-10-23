@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Интерактивная карта дорог России</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=c65696b6-7921-4274-b7e3-0b02f40260a8&lang=ru_RU"
+            type="text/javascript"></script>
+    <script src="roadsData.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <style>
+        * {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-weight: 1000;
+        }
+
+        #container {
+            width: 97%;
+            margin: 10px;
+            display: flex;
+        }
+
+        #roadInfo {
+            width: 30%;
+            padding: 10px;
+            background-color: #fff;
+            border-right: 1px solid #ccc;
+        }
+
+        #map {
+            width: 70%;
+            height: 480px;
+        }
+
+        #roadList {
+            width: 97%;
+            margin: 10px;
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            background: #caa428;
+        }
+
+
+        footer {
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .key {
+            font-size: 0.8rem;
+            display: inline-block;
+            letter-spacing: -1px;
+            transition: transform 0.2s;
+        }
+
+        @keyframes pressDown {
+            30%, 40%, 100% {
+                transform: translateY(0);
+            }
+            35% {
+                transform: translateY(10px);
+            }
+        }
+
+        @keyframes pressDown {
+            70%, 80%, 100% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(10px);
+            }
+        }
+
+        .key:nth-child(1) {
+            animation: pressDown 2s infinite;
+        }
+
+        .key:nth-child(2) {
+            animation: pressDown 3s infinite;
+        }
+
+        .key:nth-child(3) {
+            animation: pressDown 4s infinite;
+        }
+
+        .key:nth-child(4) {
+            animation: pressDown 2.5s infinite;
+        }
+
+        .key:nth-child(5) {
+            animation: pressDown5 2.5s infinite;
+        }
+
+        .key:nth-child(6) {
+            animation: pressDown6 3.5s infinite;
+        }
+
+        .key:nth-child(7) {
+            animation: pressDown7 2.2s infinite;
+        }
+
+        .key:nth-child(8) {
+            animation: pressDown8 3.2s infinite;
+        }
+
+
+        #roadInfo, select {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="roadList">
+    <label for="roads">Выберите дорогу:</label>
+    <select id="roads" style="width: 100%; height: 2rem">
+    </select>
+</div>
+<div id="container">
+    <div id="roadInfo">
+        <p id="roadDetails">Выберите дорогу для отображения информации.</p>
+    </div>
+    <div id="map"></div>
+</div>
+<footer>
+    <div class="jux-linx">
+        <span class="key">&copy;</span>
+        <span class="key">m</span>
+        <span class="key">e</span>
+        <span class="key">d</span>
+        <span class="key">v</span>
+        <span class="key">e</span>
+        <span class="key">z</span>
+        <span class="key">h</span>
+        <span class="key">o</span>
+        <span class="key">n</span>
+        <span class="key">o</span>
+        <span class="key">k</span>
+        <span class="key">o</span>
+        <span class="key">k</span>
+        <span class="key">,</span>
+        <span class="key"> </span>
+        <span class="key">2</span>
+        <span class="key">0</span>
+        <span class="key">2</span>
+        <span class="key">4</span>
+        <span class="key">.</span>
+        <span class="key"> </span>
+        <span class="key">A</span>
+        <span class="key">l</span>
+        <span class="key">l</span>
+        <span class="key"> </span>
+        <span class="key">r</span>
+        <span class="key">i</span>
+        <span class="key">g</span>
+        <span class="key">h</span>
+        <span class="key">t</span>
+        <span class="key">s</span>
+        <span class="key"> </span>
+        <span class="key">r</span>
+        <span class="key">e</span>
+        <span class="key">s</span>
+        <span class="key">e</span>
+        <span class="key">r</span>
+        <span class="key">v</span>
+        <span class="key">e</span>d.
+    </div>
+</footer>
+
+</body>
+</html>
